@@ -1,0 +1,45 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>To-do CRUD App</title>
+    <link href="css/site.css" rel="stylesheet"/>
+</head>
+
+<body>
+<h1>To-do CRUD App</h1>
+<h2>Add To-do</h2>
+<form action="javascript:void(0);" method="POST" onsubmit="addItem()">
+    <input id="add-name" placeholder="New to-do" type="text">
+    <input type="submit" value="Add">
+</form>
+
+<div id="editForm">
+    <h3>Edit To-do</h3>
+    <form action="javascript:void(0);" onsubmit="updateItem()">
+        <input id="edit-id" type="hidden">
+        <input id="edit-isComplete" type="checkbox">
+        <input id="edit-name" type="text">
+        <input type="submit" value="Save">
+        <a aria-label="Close" onclick="closeInput()">&#10006;</a>
+    </form>
+</div>
+
+<p id="counter"></p>
+
+<table>
+    <tr>
+        <th>Is Complete?</th>
+        <th>Name</th>
+        <th></th>
+        <th></th>
+    </tr>
+    <tbody id="todos"></tbody>
+</table>
+
+<script asp-append-version="true" src="js/site.js"></script>
+<script type="text/javascript">
+    getItems();
+</script>
+</body>
+</html>
